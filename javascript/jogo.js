@@ -5,7 +5,7 @@ function ajustarTamanho() {
     largura = window.innerWidth
     altura = window.innerHeight
 
-    console.log(altura, largura)
+    console.log(largura, altura)
 }
 
 ajustarTamanho()
@@ -19,10 +19,29 @@ function posicaoAleatoria() {
 
     var mosquito = document.createElement('img')
     mosquito.src = 'imagens/mosca.png'
-    mosquito.className = 'mosquito1'
+    mosquito.className = tamanhoAleatorio()
     mosquito.style.position = 'absolute'
     mosquito.style.left = posicaoX + 'px'
     mosquito.style.top = posicaoY + 'px'
 
     document.body.appendChild(mosquito)
+
+    tamanhoAleatorio()
+
+    console.log(tamanhoAleatorio())
+}
+
+function tamanhoAleatorio() {
+    var classe = Math.floor(Math.random() * 3)
+
+    switch(classe) {
+        case 0:
+            return 'mosquito1'
+        
+        case 1:
+            return 'mosquito2'
+
+        case 2:
+            return 'mosquito3'
+    }
 }
