@@ -11,6 +11,10 @@ function ajustarTamanho() {
 ajustarTamanho()
 
 function posicaoAleatoria() {
+    if (document.getElementById('mosquito')) {
+        document.getElementById('mosquito').remove()
+    }
+
     var posicaoX = Math.floor(Math.random() * largura) - 90
     var posicaoY = Math.floor(Math.random() * altura) - 90
 
@@ -23,6 +27,7 @@ function posicaoAleatoria() {
     mosquito.style.position = 'absolute'
     mosquito.style.left = posicaoX + 'px'
     mosquito.style.top = posicaoY + 'px'
+    mosquito.id = 'mosquito'
 
     document.body.appendChild(mosquito)
 }
