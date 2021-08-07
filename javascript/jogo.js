@@ -20,7 +20,7 @@ function posicaoAleatoria() {
             vidas++
         }
         else {
-            console.log('Game Over!')
+            window.location.href = 'fim_de_jogo.html'
         }
     }
 
