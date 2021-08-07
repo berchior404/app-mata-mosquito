@@ -1,6 +1,7 @@
 var largura = 0
 var altura = 0
 var vidas = 1
+var tempo = 15
 
 function ajustarTamanho() {
     largura = window.innerWidth
@@ -11,6 +12,19 @@ function ajustarTamanho() {
 
 ajustarTamanho()
 
+var cronometro = setInterval(function () {
+    tempo -= 1
+
+    if (tempo < 0) {
+        clearInterval(cronometro)
+        clearInterval(mosquito)
+        alert('Vitória')
+    } else {
+        document.getElementById('cronometro').innerHTML = tempo
+    }
+
+}, 1000);
+
 function posicaoAleatoria() {
     if (document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove()
@@ -18,8 +32,7 @@ function posicaoAleatoria() {
         if (vidas < 4) {
             document.getElementById('v' + vidas).src = '../imagens/coracao_vazio.png'
             vidas++
-        }
-        else {
+        } else {
             window.location.href = 'fim_de_jogo.html'
         }
     }
