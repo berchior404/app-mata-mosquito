@@ -16,8 +16,6 @@ if (nivel === 'normal') {
 function ajustarTamanho() {
     largura = window.innerWidth
     altura = window.innerHeight
-
-    console.log(largura, altura)
 }
 
 ajustarTamanho()
@@ -40,7 +38,7 @@ function posicaoAleatoria() {
         document.getElementById('mosquito').remove()
 
         if (vidas < 4) {
-            document.getElementById('v' + vidas).src = '../imagens/coracao_vazio.png'
+            document.getElementById('v' + vidas).src = 'imagens/coracao_vazio.png'
             vidas++
         } else {
             window.location.href = 'fim_de_jogo.html'
