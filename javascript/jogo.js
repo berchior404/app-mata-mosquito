@@ -1,16 +1,16 @@
 var largura = 0
 var altura = 0
 var vidas = 1
-var tempo = 15
-var criador = 1500
+var tempo = 60
+var criador = 0
 var nivel = window.location.search.replace('?', '')
 
 if (nivel === 'normal') {
-    criador = 1500
-} else if (nivel === 'dificil') {
     criador = 1000
-} else if (nivel === 'deus') {
+} else if (nivel === 'dificil') {
     criador = 750
+} else if (nivel === 'deus') {
+    criador = 500
 }
 
 function ajustarTamanho() {
